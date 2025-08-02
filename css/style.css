@@ -41,49 +41,261 @@ header {
   justify-content: center;
   margin-right: 0.5rem;
 }
+
+/* NAVBAR KOTAK & INTERAKTIF */
 nav ul {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
 }
-nav a {
+nav ul {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none; /* HILANGKAN BULLET */
+  padding-left: 0;   /* HILANGKAN INDENT */
+}
+.nav-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid #333;
+  border-radius: 4px;
   text-decoration: none;
   color: #333;
-  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-link:hover {
+  background: #f0f0f0;
+}
+.nav-link.active {
+  background: #333;
+  color: #fff;
 }
 
 /* Hero */
 .hero {
-  padding: 2rem 0;
-  text-align: center;
+  background-size: cover;
+  background-position: center;
+  height: 578px; /* Pastikan ini ada dan cukup tinggi */
+  display: flex; /* Atau block */
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: 4rem;
+  color: #333;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
-.hero-img img {
-  width: 100%;
-  height: auto;
-  margin-top: 1rem;
+.hero-background-img {
+  position: absolute; /* Posisikan secara absolut */
+  top: 0;
+  left: 0;
+  width: 100%; /* Lebar 100% dari parent (.hero) */
+  height: 100%; /* Tinggi 100% dari parent (.hero) */
+  object-fit: cover; /* Pastikan gambar menutupi area tanpa terdistorsi */
+  z-index: -1; /* Posisikan di belakang konten hero */
+}
+.hero-content {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  padding-top: 60px; /* Sesuaikan nilai ini sesuai keinginan Anda */
+}
+.hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.hero-content p {
+  font-size: 1rem;
+}
+
+/* Responsive adjustments for Hero Section */
+@media (max-width: 768px) {
+    .hero {
+        padding-left: 1rem; /* Kurangi padding di mobile */
+        height: auto; /* Biarkan tinggi menyesuaikan konten */
+        min-height: 400px; /* Atau berikan min-height */
+        align-items: center; /* Pusatkan konten vertikal di mobile */
+        justify-content: center; /* Pusatkan konten horizontal di mobile */
+        text-align: center; /* Pusatkan teks */
+    }
+
+    .hero-content {
+        padding-top: 20px; /* Kurangi padding top di mobile */
+        font-size: 1.5rem; /* Ukuran font lebih kecil */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Ukuran font H1 lebih kecil */
+    }
+
+    .hero-content p {
+        font-size: 0.9rem; /* Ukuran font paragraf lebih kecil */
+    }
+
+    /* Adjustments for Headquarter section */
+    .hq-item {
+        margin-bottom: 1rem; /* Tambahkan sedikit jarak antar item */
+    }
+}
+
+/* Further minor adjustments for very small screens if needed */
+@media (max-width: 480px) {
+    .header-inner .logo {
+        flex-direction: column;
+        align-items: center;
+    }
+    .site-name {
+        font-size: 0.9rem;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-link {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.9rem;
+    }
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Profile Section - Styling */
+.profile {
+    padding: 2rem 0;
+    background-color: #f9f9f9;
+}
+
+.profile-banner img {
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* Batasi tinggi banner */
+    object-fit: cover; /* Pastikan gambar mengisi area tanpa terdistorsi */
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.profile-section {
+    background-color: #fff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.profile-section h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.profile-section p,
+.profile-section ul {
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.profile-section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.profile-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Specific styling for vision and mission layout */
+.vision-mission {
+    display: flex;
+    flex-wrap: wrap; /* Untuk responsif */
+    gap: 2rem;
+}
+
+.vision, .mission {
+    flex: 1 1 45%; /* Ambil 45% lebar, agar bisa dua kolom */
+    min-width: 300px; /* Minimum width untuk item agar tidak terlalu kecil */
+}
+
+/* Responsiveness for profile section */
+@media (max-width: 768px) {
+    .vision-mission {
+        flex-direction: column; /* Ubah ke satu kolom di mobile */
+    }
 }
 
 /* Headquarter */
+/* Headquarter (sekarang Our Key Specializations) */
 .headquarter {
-  padding: 2rem 0;
-  background: #f9f9f9;
-  text-align: center;
+    padding: 2rem 0;
+    background: #f9f9f9;
+    text-align: center;
+}
+.headquarter h2 { /* Styling untuk judul "Our Key Specializations" */
+    margin-bottom: 2rem;
+    color: #333;
+    font-size: 2rem;
 }
 .hq-list {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap; /* Pastikan responsif di layar kecil */
 }
 .hq-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Pastikan teks di bawah ikon rata tengah */
+    flex: 0 0 auto; /* Cegah item memanjang tidak perlu */
+    width: 180px; /* Atur lebar tetap untuk item agar konsisten */
+    margin-bottom: 1rem; /* Jarak antar item di mode responsif */
 }
 .circle-icon {
-  width: 100px; height: 100px;
-  border: 2px solid #444;
-  border-radius: 50%;
-  margin-bottom: 0.5rem;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #444; /* Border yang sudah ada */
+    border-radius: 50%;
+    display: flex; /* Jadikan flex container untuk memposisikan ikon */
+    align-items: center; /* Pusatkan ikon vertikal */
+    justify-content: center; /* Pusatkan ikon horizontal */
+    margin-bottom: 0.8rem; /* Jarak antara ikon dan teks */
+    overflow: hidden; /* Pastikan tidak ada yang keluar dari lingkaran */
+    background-color: #e0e0e0; /* Warna latar belakang default untuk ikon */
+}
+
+.circle-icon img { /* Styling jika Anda menggunakan gambar ikon */
+  width: 100%; /* Pastikan gambar mengambil seluruh lebar container */
+  height: 100%; /* Pastikan gambar mengambil seluruh tinggi container */
+  object-fit: contain; /* Atau object-fit: cover; sesuai preferensi Anda */
+}
+
+/* Jika Anda menggunakan Font Awesome atau ikon berbasis font */
+.circle-icon .fas,
+.circle-icon .fab,
+.circle-icon .far {
+    font-size: 3.5rem; /* Ukuran ikon Font Awesome */
+    color: #333; /* Warna ikon Font Awesome */
+}
+
+.hq-item span {
+    font-size: 1.1rem; /* Ukuran teks nama spesialisasi */
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsive adjustments for this section */
+@media (max-width: 768px) {
+    .hq-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem; /* Kurangi gap di mobile */
+    }
+    .hq-item {
+        width: 100%; /* Ambil seluruh lebar di mobile untuk item */
+        max-width: 250px; /* Batasi lebar agar tidak terlalu besar di layar kecil */
+    }
 }
 
 /* Message Us */
@@ -105,12 +317,33 @@ form {
   min-height: 200px;
   white-space: pre-wrap;
 }
+.radio-group {
+  display: flex;
+  gap: 2rem; /* jarak antar pilihan */
+  align-items: center;
+  flex-wrap: wrap; /* biar tetap responsif */
+}
+
+.radio-group label {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap; /* cegah teks terpotong ke bawah */
+  font-weight: normal;
+  gap: 0.5rem;
+}
 .form-group {
   margin-bottom: 1rem;
 }
+.form-group .radio-group {
+  display: flex;
+  gap: 1.5rem; /* Jarak antar pilihan */
+  align-items: center;
+}
 .form-group label {
-  display: block;
-  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 0; /* Hilangkan margin bawaan */
 }
 .form-group input,
 .form-group textarea {
@@ -126,6 +359,13 @@ button {
   color: #fff;
   cursor: pointer;
   border-radius: 4px;
+}
+/* Styling for error messages */
+.error-message {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 0.2rem;
+    display: block; /* Pastikan error message muncul di baris baru */
 }
 
 /* Footer */
@@ -151,4 +391,8 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+}
+
+section[id] { /* Menerapkan ke semua elemen <section> yang memiliki atribut 'id' */
+    scroll-margin-top: 80px; /* Sesuaikan nilai ini sesuai tinggi navbar Anda */
 }

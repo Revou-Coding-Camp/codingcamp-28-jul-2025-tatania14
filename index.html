@@ -13,76 +13,121 @@
     <div class="container header-inner">
       <div class="logo">
         <div class="logo-circle">😊</div>
-        <span class="site-name">My Website</span>
+        <span class="site-name">MyGIS</span>
       </div>
       <nav>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#profile">Our Profile</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#message">Message Us</a></li>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#profile" class="nav-link">Our Profile</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#message" class="nav-link">Message Us</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="container">
-      <h1>Hi <span id="user-name">[Name]</span>, Welcome To Website</h1>
-      <p>ini adalah website latihan pertama</p>
-      <div class="hero-img">
-        <img src="https://via.placeholder.com/1366x579" alt="Placeholder">
-      </div>
+<section class="hero" id="home">
+    <img src="image/gis.PNG" alt="Background GIS" class="hero-background-img">
+    <div class="hero-content">
+        <h1 id="welcome-message">Hi Guest, Welcome To Website</h1>
     </div>
-  </section>
+</section>
+
+
+  <!-- Our Profile (section kosong, isi bebas) -->
+  <section id="profile" class="profile">
+    <div class="container">
+        <div class="profile-banner">
+            <img src="image/profil.png">
+        </div>
+
+        <div class="profile-section about-company">
+            <h3>About Our Company</h3>
+            <p>We are an innovative company dedicated to providing cutting-edge Geographic Information System (GIS) solutions across diverse industry sectors. Established in 2024, we have empowered numerous clients to visualize, analyze, and leverage spatial data to achieve their strategic objectives through high-quality products and services. Our unwavering commitment to excellence and client satisfaction lies at the core of everything we do.</p>
+            <p>Supported by a team of experienced and passionate geospatial experts, software developers, and data analysts, we continuously adapt to the latest geospatial technologies, satellite imagery, and spatial big data trends to ensure our position at the forefront of the industry. We are intensely focused on innovation to deliver accurate and actionable location-based insights.</p>
+        </div>
+
+        <div class="profile-section vision-mission">
+            <div class="vision">
+                <h3>Our Vision</h3>
+                <p>Leading the geospatial industry and GIS solutions through relentless innovation, we aim to provide unparalleled value to our clients, employees, and shareholders, enabling data-driven, smarter decisions powered by location intelligence.</p>
+            </div>
+            <div class="mission">
+                <h3>Our Mission</h3>
+                <ul>
+                    <li>Providing high-quality, innovative, and relevant GIS products and services that meet and exceed client expectations in geospatial data management and analysis.</li>
+                    <li>Building long-term relationships with our clients based on trust, integrity, and a profound understanding of their specific needs in leveraging geographic information.</li>
+                    <li>Fostering a culture of continuous innovation and learning among our employees, particularly in research and development of the latest geospatial technologies, machine learning for spatial data, and interactive visualization.</li>
+                    <li>Contributing positively to society and the environment by promoting the use of geospatial data for sustainable development, natural resource management, and improving quality of life through responsible business practices.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
   <!-- Our Headquarter -->
-  <section id="portfolio" class="headquarter">
+<section id="portfolio" class="headquarter">
     <div class="container">
-      <h2>Our Headquarter</h2>
-      <div class="hq-list">
-        <div class="hq-item"><div class="circle-icon"></div><span>Jakarta</span></div>
-        <div class="hq-item"><div class="circle-icon"></div><span>Bandung</span></div>
-        <div class="hq-item"><div class="circle-icon"></div><span>Surabaya</span></div>
-      </div>
+        <h2>Our Key Specializations</h2> <div class="hq-list">
+            <div class="hq-item">
+                <div class="circle-icon">
+                    <img src="image/as.png">
+                    </div>
+                <span>Spatial Analysis</span> </div>
+            <div class="hq-item">
+                <div class="circle-icon">
+                    <img src="image/web.png" alt="WebGIS Development Icon">
+                    </div>
+                <span>WebGIS Development</span> </div>
+            <div class="hq-item">
+                <div class="circle-icon">
+                    <img src="image/ma.PNG" alt="Mapping & Data Acquisition Icon">
+                    </div>
+                <span>Mapping & Data Acquisition</span> </div>
+        </div>
     </div>
-  </section>
+</section>
 
   <!-- Message Us -->
   <section id="message" class="message-us">
-    <div class="container">
-      <h2>Message Us</h2>
-      <form id="contact-form">
-        <div class="form-group">
-          <label for="name">Nama</label>
-          <input type="text" id="name" name="name" />
-        </div>
-        <div class="form-group">
-          <label for="dob">Tanggal Lahir</label>
-          <input type="date" id="dob" name="dob" />
-        </div>
-        <div class="form-group">
-          <label>Jenis Kelamin</label>
-          <label><input type="radio" name="gender" value="Laki-laki" /> Laki-laki</label>
-          <label><input type="radio" name="gender" value="Perempuan" /> Perempuan</label>
-        </div>
-        <div class="form-group">
-          <label for="message">Pesan</label>
-          <textarea id="message" name="message" rows="4"></textarea>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-      <div id="output" class="output-box">
-        <!-- Hasil akan ditampilkan di sini -->
+  <div class="container">
+    <h2>Message Us</h2>
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="name">Nama</label>
+        <input type="text" id="name" name="name" />
+        <span class="error-message" id="name-error"></span>
       </div>
-    </div>
-  </section>
+      <div class="form-group">
+        <label for="dob">Tanggal Lahir</label>
+        <input type="date" id="dob" name="dob" />
+        <span class="error-message" id="dob-error"></span>
+      </div>
+      <div class="form-group">
+  <label>Jenis Kelamin</label>
+  <div class="radio-group">
+    <label><input type="radio" name="gender" value="Laki-laki" /> Laki-laki</label>
+    <label><input type="radio" name="gender" value="Perempuan" /> Perempuan</label>
+  </div>
+  <span class="error-message" id="gender-error"></span>
+</div>
+      <div class="form-group">
+        <label for="message">Pesan</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+        <span class="error-message" id="message-error"></span>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="output" class="output-box">
+      </div>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p class="created-by">Created by [Your Name]</p>
+      <p class="created-by">Created by Intan Anisa</p>
     </div>
   </footer>
 
