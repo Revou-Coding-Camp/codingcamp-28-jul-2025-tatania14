@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Website</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-circle">😊</div>
+        <span class="site-name">My Website</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#profile">Our Profile</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#message">Message Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>Hi <span id="user-name">[Name]</span>, Welcome To Website</h1>
+      <p>ini adalah website latihan pertama</p>
+      <div class="hero-img">
+        <img src="https://via.placeholder.com/1366x579" alt="Placeholder">
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Headquarter -->
+  <section id="portfolio" class="headquarter">
+    <div class="container">
+      <h2>Our Headquarter</h2>
+      <div class="hq-list">
+        <div class="hq-item"><div class="circle-icon"></div><span>Jakarta</span></div>
+        <div class="hq-item"><div class="circle-icon"></div><span>Bandung</span></div>
+        <div class="hq-item"><div class="circle-icon"></div><span>Surabaya</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Message Us -->
+  <section id="message" class="message-us">
+    <div class="container">
+      <h2>Message Us</h2>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Nama</label>
+          <input type="text" id="name" name="name" />
+        </div>
+        <div class="form-group">
+          <label for="dob">Tanggal Lahir</label>
+          <input type="date" id="dob" name="dob" />
+        </div>
+        <div class="form-group">
+          <label>Jenis Kelamin</label>
+          <label><input type="radio" name="gender" value="Laki-laki" /> Laki-laki</label>
+          <label><input type="radio" name="gender" value="Perempuan" /> Perempuan</label>
+        </div>
+        <div class="form-group">
+          <label for="message">Pesan</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="output" class="output-box">
+        <!-- Hasil akan ditampilkan di sini -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="created-by">Created by [Your Name]</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
